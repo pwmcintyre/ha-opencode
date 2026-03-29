@@ -25,7 +25,8 @@ if bashio::var.has_value "${openai_api_key}"; then
     bashio::log.info "OpenAI API key configured"
 fi
 
-cd /data/opencode || true
+mkdir -p /data/opencode
+cd /data/opencode
 
 bashio::log.info "Starting OpenCode web server on port ${port}..."
 

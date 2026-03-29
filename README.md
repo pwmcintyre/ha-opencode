@@ -8,13 +8,14 @@ Runs `opencode web` inside a Docker container on your Home Assistant OS, giving 
 
 ## Installation
 
-1. In Home Assistant, go to **Settings → Add-ons → Add-on Store**
+1. In Home Assistant, go to **Settings → Apps → App store**
 2. Click the three dots menu (top right) → **Repositories**
 3. Add this repository URL: `https://github.com/pwmcintyre/ha-opencode`
-4. Find "OpenCode" in the store and click **Install**
-5. Configure your API key(s) and server password in the add-on settings
-6. Start the add-on
-7. Access the web UI at `http://<your-ha-ip>:4096`
+4. Click "Check for updates" in the three dots menu, then refresh the page
+5. Find "OpenCode" in the store and click **Install**
+6. Configure your API key(s) and server password in the app settings
+7. Start the app
+8. Access the web UI at `http://<your-ha-ip>:4096`
 
 ## Configuration
 

@@ -8,16 +8,13 @@ declare anthropic_api_key
 declare openai_api_key
 declare port
 
-# Read config from add-on options
 server_password=$(bashio::config 'server_password')
 anthropic_api_key=$(bashio::config 'anthropic_api_key')
 openai_api_key=$(bashio::config 'openai_api_key')
 port=$(bashio::config 'port')
 
-# Set required env vars
 export OPENCODE_SERVER_PASSWORD="${server_password}"
 
-# Set optional provider keys
 if bashio::var.has_value "${anthropic_api_key}"; then
     export ANTHROPIC_API_KEY="${anthropic_api_key}"
     bashio::log.info "Anthropic API key configured"
@@ -28,8 +25,7 @@ if bashio::var.has_value "${openai_api_key}"; then
     bashio::log.info "OpenAI API key configured"
 fi
 
-# Use addon_config as the working directory for persistent data
-cd /config || cd /data/opencode
+cd /data/opencode || true
 
 bashio::log.info "Starting OpenCode web server on port ${port}..."
 

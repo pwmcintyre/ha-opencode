@@ -1,5 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/aarch64-base:3.21
-FROM ${BUILD_FROM}
+FROM ghcr.io/home-assistant/base:latest
 
 # Install runtime dependencies
 RUN apk add --no-cache \
@@ -9,7 +8,7 @@ RUN apk add --no-cache \
 
 # Install OpenCode binary
 RUN curl -fsSL https://opencode.ai/install | bash \
-    && mv /root/.local/bin/opencode /usr/local/bin/opencode \
+    && mv /root/.opencode/bin/opencode /usr/local/bin/opencode \
     && chmod +x /usr/local/bin/opencode
 
 # Create persistent data directory
